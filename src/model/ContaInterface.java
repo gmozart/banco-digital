@@ -2,14 +2,9 @@ package model;
 
 public interface ContaInterface {
 
-  private void sacar(){
-  }
-
-  private void depositar(){
-  }
-
-  private void transferir(){
-  }
+  void sacar(Double valor);
+  void depositar(Double valor);
+  void transferir(Double valor, Conta contaDestino);
 
 
 }
