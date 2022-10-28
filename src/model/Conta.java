@@ -32,6 +32,9 @@ public abstract class Conta implements ContaInterface {
     @Override
     public void transferir(Double valor, Conta contaDestino) {
 
+        this.sacar(valor);
+        contaDestino.depositar(valor);
+
     }
 
     public void linhaCredito(String tipoConta) {
@@ -53,5 +56,12 @@ public abstract class Conta implements ContaInterface {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    protected void impInfoConta() {
+        System.out.println(String.format("Agencia: %d",this.agencia));
+        System.out.println(String.format("Numero: %d",this.numero));
+        System.out.println(String.format("Saldo: %.2f",this.saldo));
+        System.out.println(String.format("Credito: %.2f",this.credito));
     }
 }
