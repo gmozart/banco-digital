@@ -1,10 +1,23 @@
 package model;
 
 public abstract class Conta implements ContaInterface {
-    private int agencia;
-    private int numero;
-    private double saldo;
-    private double credito;
+
+    private static final int AGENCIA_PADRAO = 1000;
+    private static int SEQUENCIAL = 1;
+
+    protected int agencia;
+    protected int numero;
+    protected double saldo;
+    protected double credito;
+
+    protected String tpConta;
+
+    public Conta(){
+        this.agencia = Conta.AGENCIA_PADRAO;
+        this.numero = SEQUENCIAL++;
+    }
+
+
     @Override
     public void sacar(Double valor) {
         saldo -= valor;
@@ -21,11 +34,10 @@ public abstract class Conta implements ContaInterface {
 
     }
 
-    @Override
-    public void linhaCredito(Double valor, String tipoConta) {
+    public void linhaCredito(String tipoConta) {
 
         if(tipoConta == "CC"){
-            credito += valor;
+            credito += 5000;
         }else {
             credito = 0;
         }

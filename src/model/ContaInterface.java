@@ -6,7 +6,7 @@ public interface ContaInterface {
   void depositar(Double valor);
   void transferir(Double valor, Conta contaDestino);
 
-  void linhaCredito(Double valor, String tipoConta);
+  void linhaCredito(String tipoConta);
 
 
 }
