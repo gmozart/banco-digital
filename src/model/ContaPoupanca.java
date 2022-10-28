@@ -1,10 +1,15 @@
 package model;
 
 public class ContaPoupanca extends Conta {
-    private String tpConta = "PP";
+
+    public ContaPoupanca(Cliente cliente){
+        super(cliente);
+
+    }
     @Override
     public void imprimirExtrato() {
         System.out.println("===== Extrato Conta Poupanca =====");
+        String tpConta = "PP";
         super.linhaCredito(tpConta);
         super.impInfoConta();
     }
