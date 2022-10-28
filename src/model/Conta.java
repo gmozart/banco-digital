@@ -36,8 +36,7 @@ public abstract class Conta implements ContaInterface {
         contaDestino.depositar(valor);
 
     }
-
-    public void linhaCredito(String tipoConta) {
+     public void linhaCredito(String tipoConta) {
 
         if(tipoConta == "CC"){
             credito += 5000;
